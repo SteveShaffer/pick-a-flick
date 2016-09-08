@@ -20,9 +20,12 @@ module.exports = function(grunt) {
              * Copy all the source files needed to run the app over to a clean /dev folder
              */
             dev: {
-                files: [
-                    {expand:true, cwd:'src', src: ['**', '!**/*.spec.js', '!index.tpl.html'], dest: 'dev'}
-                ]
+                files: [{
+                    expand:true,
+                    cwd:'src',
+                    src: ['**', '!**/*.spec.js', '!**/*.scss', '!index.tpl.html'],
+                    dest: 'dev'
+                }]
             }
         },
         includeSource: {
@@ -58,6 +61,13 @@ module.exports = function(grunt) {
                 singleRun: false
             }
         },
+        sass: {
+            dev: {
+                files: {
+                    'dev/index.css': 'src/index.scss'
+                }
+            }
+        },
         watch: {
             options: {
                 livereload: true  // Install the livereload Chrome extension to have the page automatically reload
@@ -67,7 +77,7 @@ module.exports = function(grunt) {
              * When any files change, we want to run unit tests and rebuild
              **/
             dev: {
-                files: ['src/**/*', '!src/index.html'],
+                files: ['gruntfile.js', 'karma.conf.js', 'src/**/*', '!src/index.html'],
                 tasks: [
                     'karma:unit:run',
                     'build'
@@ -83,6 +93,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-include-source');
     grunt.loadNpmTasks('grunt-karma');
     // grunt.loadNpmTasks('grunt-ng-annotate');  // TODO: Include for minification (along with uglify)
+    grunt.loadNpmTasks('grunt-sass');
 
     /**
      * Builds the dev source
@@ -90,6 +101,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'clean:dev',
         'copy:dev',
+        'sass:dev',
         'includeSource:dev'
     ]);
 
