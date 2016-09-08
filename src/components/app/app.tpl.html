@@ -1,0 +1,8 @@
+<header>
+    <paf-search-box on-update="$ctrl.executeSearch(value)"></paf-search-box>
+</header>
+<div>
+    <pre>
+        {{$ctrl.searchResults | json}}
+    </pre>
+</div>
