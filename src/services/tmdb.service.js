@@ -1,8 +1,12 @@
 (function () {
     /**
-     * Wrapper for the TMDB API
+     * @name services.tmdb
+     * @alias Tmdb
+     *
+     * @description Wrapper for the TMDB API
      */
-    angular.module('services.tmdb', [])
+    angular
+        .module('services.tmdb', [])
         .service('Tmdb', TmdbService);
 
     function TmdbService ($http, $q) {
@@ -17,7 +21,10 @@
         return external;
 
         /**
-         * Calls the TMDB API with a search term
+         * @name services.tmdb.search
+         * @alias Tmdb.search
+         * @description Calls the TMDB API with a search term
+         *
          * @param {String} searchTerm The term to search the database for
          * @returns {Promise} A promise resolving to the query's result
          */
