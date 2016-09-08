@@ -12,9 +12,8 @@
             controller: AppController
         });
 
-    function AppController (Tmdb, $log) {
+    function AppController (Tmdb) {  // TODO: Test this controller
         var vm = this;
-        $log.log('Working!');
 
         vm.executeSearch = function (value) {
             Tmdb.search(value).then(function (results) {

@@ -13,15 +13,11 @@
             controller: SearchBoxController
         });
     
-    function SearchBoxController ($log) {
+    function SearchBoxController () {
         var $ctrl = this;
         
         $ctrl.searchChanged = function () {
             $ctrl.onUpdate({value: $ctrl.searchTerm});
         };
-
-        $ctrl.$onChanges = function (changes) {
-            $log.log(changes);
-        }
     }
 })();
