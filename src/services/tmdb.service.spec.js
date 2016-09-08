@@ -64,6 +64,15 @@ describe("tmdb service", function () {
             //noinspection JSUnusedAssignment
             expect(result).toEqual(API_MOCK_RESPONSE);
         });
+        it("should accept blank input gracefully", function () {
+            var result;
+            Tmdb.search('').then(function (response){
+                result = response;
+            });
+            $rootScope.$digest();
+            //noinspection JSUnusedAssignment
+            expect(result).toEqual({});
+        });
     });
 
 });

@@ -25,10 +25,11 @@
          * @alias Tmdb.search
          * @description Calls the TMDB API with a search term
          *
-         * @param {String} searchTerm The term to search the database for
+         * @param {String} [searchTerm] The term to search the database for
          * @returns {Promise} A promise resolving to the query's result
          */
         function search (searchTerm) {
+            if (!searchTerm) { return $q.resolve({}); }
             var url = API_BASE + 'search/movie';
             return $http.get(url, {
                 params: {
