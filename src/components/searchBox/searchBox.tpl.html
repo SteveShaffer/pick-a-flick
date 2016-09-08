@@ -1,0 +1,5 @@
+<input type="text"
+       placeholder="Movie Title"
+       ng-model="$ctrl.searchTerm"
+       ng-model-options="{debounce: 600}"
+       ng-change="$ctrl.searchChanged()">
