@@ -1,0 +1,29 @@
+{
+  "name": "pick-a-flick",
+  "version": "1.0.0",
+  "description": "Search ALL THE FILMS",
+  "main": "index.js",
+  "scripts": {
+    "start": "grunt",
+    "test": "grunt karma:continuous"
+  },
+  "author": "steve@shaffer.ninja",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "angular": "^1.5.8"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-include-source": "^1.0.0",
+    "grunt-karma": "^2.0.0",
+    "grunt-ng-annotate": "^2.0.2",
+    "jasmine": "^2.5.1",
+    "karma": "^1.2.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2"
+  }
+}
