@@ -23,3 +23,6 @@ Pick-a-Flick uses the following tools for development
 * karma: unit test runner, mostly taken care of through grunt
 * jasmine: test language used to write spec files that are run by karma
 * phantomJS: headless browser environment where unit tests are run
+* sass: modularized css
+* moment.js: date parsing and formatting
+* TMDB: movie database
