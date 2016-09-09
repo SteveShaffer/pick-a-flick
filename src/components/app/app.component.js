@@ -5,6 +5,7 @@
     angular
         .module('components.app', [
             'components.searchBox',
+            'components.movieList',
             'services.tmdb'
         ])
         .component('pafApp', {
@@ -12,12 +13,13 @@
             controller: AppController
         });
 
-    function AppController (Tmdb) {  // TODO: Test this controller
+    function AppController (Tmdb) {
         var vm = this;
 
         vm.executeSearch = function (value) {
-            Tmdb.search(value).then(function (results) {
-                vm.searchResults = results;
+            vm.searchTerm = value;
+            Tmdb.search(value).then(function (result) {
+                vm.searchResults = result.results;
             });
         }
     }

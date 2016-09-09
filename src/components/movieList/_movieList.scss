@@ -1,0 +1,14 @@
+paf-movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .no-movies {
+        color: white;
+    }
+
+    // When we're on phones, disable flexbox and just have one column
+    @media (max-width: 768px) {
+        display: block;
+    }
+}

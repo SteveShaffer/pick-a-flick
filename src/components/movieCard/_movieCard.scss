@@ -1,0 +1,62 @@
+paf-movie-card {
+    display: block;
+    background-color: white;
+    width: 150px;
+    height: 225px;  // 185:278 ~= 150:225
+    overflow: hidden;
+    margin: 1em;
+
+    // When we're on phones, just have one centered column
+    @media (max-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .inner {
+        height: 100%;
+        background-size: cover;
+        position: relative;
+
+        .title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8));  // TODO: Use some gradient mixin or something
+
+            h2 {
+                max-height: 80px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &.has-poster {
+            .title {
+                display: none;
+            }
+            &:hover .title {
+                display: block;
+            }
+        }
+    }
+
+    .info-overlay {
+        font-family: sans-serif;
+        display: none;
+        background-color: rgba(0,0,0,0.8);
+        padding: 10px;
+        color: white;
+
+        &.release-date {
+            float: right;
+        }
+        &.vote-average {
+            float: left;
+        }
+    }
+    &:hover .info-overlay {
+        display: block;
+    }
+}

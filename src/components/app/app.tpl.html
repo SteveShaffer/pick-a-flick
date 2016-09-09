@@ -1,8 +1,7 @@
 <header>
+    <h1>Pick a Flick</h1>
     <paf-search-box on-update="$ctrl.executeSearch(value)"></paf-search-box>
 </header>
 <div>
-    <pre>
-        {{$ctrl.searchResults | json}}
-    </pre>
+    <paf-movie-list movies="$ctrl.searchResults" ng-if="$ctrl.searchTerm"></paf-movie-list>
 </div>

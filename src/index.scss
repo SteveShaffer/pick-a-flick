@@ -1,5 +1,9 @@
-//@import '../node_modules/bootstrap/scss/bootstrap';  // TODO: Should we use bootstrap?
+//@import '../node_modules/bootstrap/scss/bootstrap';
+// TODO: Eventually use bootstrap for more tailored and consistent styling
+
 @import "components/app/app";
+@import "components/movieCard/movieCard";
+@import "components/movieList/movieList";
 @import "components/searchBox/searchBox";
 
 body {

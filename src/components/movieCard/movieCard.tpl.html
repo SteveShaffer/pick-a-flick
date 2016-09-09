@@ -1,0 +1,17 @@
+<div class="inner"
+     ng-class="{'has-poster': $ctrl.movie.poster_path}"
+     style="background-image: url(https://image.tmdb.org/t/p/w185_and_h278_bestv2{{$ctrl.movie.poster_path}})">
+    <!--TODO: Got this URL pattern from the main page, not the API docs.  Possibly a better one to use?-->
+    <!--TODO: Better default background when no poster exists-->
+
+    <div class="info-overlay release-date">
+        {{$ctrl.movie.release_date | moment:'YYYY'}}
+    </div>
+    <div class="info-overlay vote-average"
+         ng-if="$ctrl.movie.vote_average">
+        {{$ctrl.movie.vote_average}} &#9733;
+    </div><!--TODO: eventually use better icons (e.g. mdi)-->
+    <div class="title">
+        <h2 ng-bind="$ctrl.movie.title"></h2>
+    </div>
+</div>
